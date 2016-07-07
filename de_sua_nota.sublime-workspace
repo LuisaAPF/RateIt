@@ -1,0 +1,371 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pal",
+				"palavraChave"
+			],
+			[
+				"d",
+				"descricao"
+			],
+			[
+				"pa",
+				"palavraChave"
+			],
+			[
+				"real",
+				"real_escape_string"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"content",
+				"Content-Type"
+			],
+			[
+				"con",
+				"connection"
+			],
+			[
+				"co",
+				"connection"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bor",
+				"border-box"
+			],
+			[
+				"border-bott",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-ra",
+				"border-top-right-radius"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"lists",
+				"list-style-type"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"st",
+				"strArray"
+			],
+			[
+				"str",
+				"strArray"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/luisa/projetos/de_sua_nota/de_sua_nota.sublime-project",
+		"/home/luisa/Desktop/form_template.php",
+		"/home/luisa/projetos/estoque/db_connection.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/cadastro_produto_mensagem.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/listagem_pedidos.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/buscar_cliente.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/fazer_pedido.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/resultado_busca.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/form_cadastro_produto.php",
+		"/home/luisa/projetos/estoque/CLIENTES/form_cadastro_cliente.php",
+		"/home/luisa/projetos/estoque/CLIENTES/cadastro_cliente_mensagem.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/remover_pedido.php",
+		"/home/luisa/projetos/estoque/index.php",
+		"/home/luisa/projetos/estoque/PEDIDOS/class_pedidos.php",
+		"/home/luisa/projetos/estoque/header.html",
+		"/home/luisa/projetos/estoque/PEDIDOS/buscar_pedidos.php",
+		"/home/luisa/projetos/estoque/CLIENTES/class_clientes.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/listagem_produtos.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/editar_produto.php",
+		"/home/luisa/projetos/estoque/CLIENTES/editar_cliente.php",
+		"/home/luisa/projetos/estoque/CLIENTES/remover_cliente.php",
+		"/home/luisa/projetos/estoque/CLIENTES/listagem_clientes.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/remover_produto.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/class_produtos.php",
+		"/home/luisa/projetos/estoque/PRODUTOS/listagem_produtos_teste.php",
+		"/home/luisa/projetos/estoque/CLIENTES/buscar_cliente.php",
+		"/usr/share/wordpress/wp-content/themes/twentyfourteen/functions.php",
+		"/usr/share/wordpress/wp-content/themes/twentyfourteen/page.php",
+		"/usr/share/wordpress/wp-includes/functions.php",
+		"/home/luisa/projetos/estoque/remover_produto.php",
+		"/home/luisa/projetos/estoque/listagem_produtos.php",
+		"/home/luisa/projetos/estoque/class_produtos.php",
+		"/home/luisa/projetos/estoque/form_cadastro_produto.php",
+		"/home/luisa/projetos/estoque/cadastro_produto_mensagem.php",
+		"/home/luisa/projetos/estoque/editar_produto.php",
+		"/var/www/html/index.php",
+		"/var/www/html/form_cadastro_produto.php",
+		"/var/www/html/footer.html",
+		"/var/www/html/estilos.css",
+		"/var/www/html/db_connection.php",
+		"/var/www/html/buscar_produto.php",
+		"/var/www/html/editar_produto.php",
+		"/var/www/html/class_produtos.php",
+		"/var/www/html/listagem_produtos.php",
+		"/etc/apache2/apache2.conf",
+		"/var/www/html/header.html",
+		"/home/luisa/projetos/estoque/footer.html",
+		"/var/www/html/script.js",
+		"/var/www/html/form_cadastro.php",
+		"/var/www/html/cadastro_produto.php",
+		"/var/www/html/connection_data.php",
+		"/var/log/apache2/error.log",
+		"/var/www/html/retorno_cadastro.php",
+		"/home/luisa/Documents/Luisa/DeSuaNota/estilos.css",
+		"/var/www/html/teste.php",
+		"/home/luisa/Documents/Luisa/DeSuaNota/home.html",
+		"/var/www/html/form_cadastro.html",
+		"/home/luisa/Documents/Luisa/DeSuaNota/index.php",
+		"/var/www/html/formCadastro.html",
+		"/home/luisa/Documents/Luisa/DeSuaNota/script.js",
+		"/home/luisa/Desktop/mysql",
+		"/home/luisa/Documents/Luisa/DeSuaNota/menu.js",
+		"/home/luisa/Documents/Luisa/DeSuaNota/Home.html",
+		"/home/luisa/Documents/Luisa/DeSuaNota/cadastro_produto",
+		"/home/luisa/Documents/Luisa/DeSuaNota/Estilos.css",
+		"/home/luisa/Documents/Luisa/Cursos/htmlDoc.html",
+		"/home/luisa/Documents/Luisa/Cursos/largestWord.js",
+		"/home/luisa/Documents/Luisa/Cursos/countVowels.js",
+		"/home/luisa/Documents/Luisa/Cursos/biggestElement.js",
+		"/home/luisa/Documents/Luisa/Cursos/stringRotate.js",
+		"/home/luisa/Documents/Luisa/Cursos/strSlice.js",
+		"/home/luisa/Documents/Luisa/Cursos/guessNumber.js",
+		"/home/luisa/Documents/Luisa/Cursos/firstLetterUpper.js",
+		"/home/luisa/Documents/Luisa/Cursos/stringRotate",
+		"/home/luisa/Documents/Luisa/Cursos/areaTriangulo.js",
+		"/home/luisa/Documents/Luisa/Cursos/buildDate.js",
+		"/home/luisa/Documents/Luisa/Cursos/buildDate2.js",
+		"/home/luisa/Documents/Luisa/buildDate.js",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/helpers.js",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/dashboard/reservations.js",
+		"/home/luisa/Documents/Luisa/curso PHP.txt",
+		"/home/luisa/Documents/Luisa/curso js.txt",
+		"/home/luisa/projetos/menutrip-meteor/client/clientStartup.js",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/eventos/form.html",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/home/index.html",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/layout.js",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/loading.js",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/loading.html",
+		"/home/luisa/.bashrc",
+		"/home/luisa/git-prompt.sh",
+		"/home/luisa/.local/share/applications/android-studio.desktop",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/layout.html",
+		"/home/luisa/projetos/menutrip-meteor/client/templates/app/head.html",
+		"/home/luisa/learn_meteor/imports/ui/task.html",
+		"/home/luisa/learn_meteor/imports/ui/body.html",
+		"/home/luisa/learn_meteor/server/main.js",
+		"/home/luisa/learn_meteor/client/main.html",
+		"/home/luisa/learn_meteor/imports/ui/task.js",
+		"/home/luisa/learn_meteor/imports/ui/body.js",
+		"/home/luisa/learn_meteor/imports/api/tasks.js",
+		"/home/luisa/learn_meteor/imports/ui/simple-todos.css",
+		"/home/luisa/learn_meteor/client/main.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Movies",
+			"movies",
+			"Movies",
+			"movies",
+			"Movies",
+			"movies",
+			"Movies",
+			"movies",
+			"Movies",
+			"movies",
+			"register_po",
+			"post",
+			"media",
+			"id",
+			"var/www",
+			"dados_cadastro",
+			"return",
+			"display: no",
+			"aside",
+			"input",
+			"right",
+			"relative",
+			"numGuests",
+			"PS1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"POST"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "de_sua_nota.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/learn_meteor/learn_meteor.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

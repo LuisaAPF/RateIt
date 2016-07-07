@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="cache-control" content="no-cache"/>
+	<title>DeSuaNota</title>
+	<link rel="stylesheet" type="text/css" href="/estilos.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+<body>	
+	<nav>
+		<a id="btn-menu-toggle" href="#"><i class="fa fa-bars fa-2x"></i></a>
+		<a href="/index.php">
+ 			<img src="imagens/nota.jpeg" alt="nota">
+		</a>
+		<a href="/form_cadastro.php" class="nav-menu">Avaliar um produto</a>	
+		<!--a href="" class="nav-menu">Minhas avaliações</a-->
+		<a href="#" class="nav-menu nav-right" id="anchor-login">Entrar</a>
+		<a href="/cadastro_usuario.php" class="nav-menu nav-right">Cadastrar</a>
+	</nav>
+	<aside style="display:none">
+		<ul>
+			<li>Avaliar um produto</li>
+			<!--li>Minhas avaliações</li-->
+		</ul>
+	</aside>
+	<div id="modal-login" class="modal" style="display:none">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div id="mensagem-login">
+
+			</div>
+			<form>
+				<div class="container">
+					<br>
+					<div class="row">
+						<div>
+							<input id="login" name="login" placeholder=" Login" class="input-lg input-login" required>
+						</div>
+					</div>
+					<div class="row">
+							<input id="senha" name="senha" type="password" placeholder=" Senha" class="input-lg input-login" required>
+					</div>
+					<div class="row">
+						<button id="btn-submit-login" type="button" class="btn-lg btn-green right">Entrar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
