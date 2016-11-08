@@ -23,6 +23,10 @@ class login {
 		$_SESSION['login'] = $login;
 	}
 
+	function destruir_sessao() {
+		if (isset($_SESSION['login'])) session_destroy();
+	}
+
 	function hash_equals($str1, $str2) {
 	    if(strlen($str1) != strlen($str2)) {
 	      return false;

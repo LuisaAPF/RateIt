@@ -1,49 +1,112 @@
-function toggle(element){
-	if (element.style.display !== "none")
-		element.style.display = "none";
-	else element.style.display = "block";
+function toggle_inline(){
+	for (var i=0; i<this.length; i++){
+		console.log(this[i]);
+		if (this[i].css("display") !== "none")
+			this[i].css("display") = "none";
+		else this[i].css("display") = "inline-block";
+	}
 }
-
 
 document.addEventListener("DOMContentLoaded", function(){
 
 	var modal = document.getElementsByClassName("modal")[0];
-	var modalLogin = document.getElementById("modal-login");
 	var mobileMenu = document.getElementById("btn-menu-toggle");
-	var anchorLogin = document.getElementById("anchor-login");
 	var btnLogin = document.getElementById("btn-submit-login");
+
+	$.ajax({url:"/session.php",
+		success: function(resultado) {
+			console.log(resultado);
+			if (resultado == "logged out") {
+				if ($("#btn-menu-toggle").css("display") == "none") {
+					$(".nav-loggedout").css("display", "inline-block");
+					$(".nav-loggedin").css("display", "none");	
+				}
+				else {
+					$(".aside-loggedout").css("display", "block");
+					$(".aside-loggedin").css("display", "none");	
+				}				
+				
+			}
+			else if (resultado == "logged in") {
+				if ($("#btn-menu-toggle").css("display") == "none") {
+					$(".nav-loggedout").css("display", "none");
+					$(".nav-loggedin").css("display", "inline-block");	
+				}
+				else {
+					$(".aside-loggedout").css("display", "none");
+					$(".aside-loggedin").css("display", "block");	
+				}
+			}
+		}
+	});
 		
 	// toggles mobile menu
 	mobileMenu.addEventListener("click", function(){
-		toggle(document.getElementsByTagName("aside")[0]);
+		$("aside").toggle();
 	});
+	// opens login modal
+	$("#nav-login").click( function(){
+		$("#modal-login").css("display", "block");    	
+	});
+	$("#aside-login").click( function(){
+		$("#modal-login").css("display", "block");   
+		$("aside").css("display", "none"); 	
+	});	
 	// handles login request
-	anchorLogin.addEventListener("click", function(){
-		modalLogin.style.display = "block";    	
-		btnLogin.addEventListener("click", function(){
-			var login = $("#login").val();
-			var senha = $("#senha").val();
-	
-			$.ajax({method: "POST", url: "/login.php", data: {login: login, senha: senha},
-				success: function(resultado){
-					// $("#mensagem-login").html(resultado);
-					if (resultado)
-						$("#mensagem-login").html("Logado!");
-						// modal.style.display = "none";
-					else {
-						$("#mensagem-login").html("Login ou senha não conferem.");
+	btnLogin.addEventListener("click", function(){
+		var login = $("#login").val();
+		var senha = $("#senha").val();
+
+		$.ajax({method: "POST", url: "/login.php", data: {login: login, senha: senha},
+			success: function(resultado){
+				resultado = resultado.replace(/\s/g,'');
+				if (resultado == 'success') {
+					$("#modal-login").css("display", "none"); 
+					if ($("#btn-menu-toggle").css("display") == "none") {
+						$(".nav-menu").toggle();
 					}
-				} ,
-				error: function(){
-					$("#mensagem-login").html("Ocorreu um erro e a ação não pôde ser concluída.");
+					else {
+						$(".aside-loggedin").toggle();
+						$(".aside-loggedout").toggle();
+					}
 				}
-			});
+				else if (resultado == 'error') {
+					$("#mensagem-login").html("Wrong password or login");
+				}
+			} ,
+			error: function(){
+				$("#mensagem-login").html("Error in the request");
+			}
 		});
 	});
-	// closes modal when clicking on button
-	document.getElementsByClassName("close")[0].addEventListener("click", function(){
-		modal.style.display = "none";
+	//handles logout request
+	$("#nav-logout").click(function() {	
+		$.ajax({url: "/logout.php",
+			success: function() {
+				$(".nav-menu").toggle();
+			},
+			error: function() {
+				alert("Error. Unable to logout.");
+		}});
 	});
+	$("#aside-logout").click(function() {	
+		$("aside").css("display", "none");
+		$.ajax({url: "/logout.php",
+			success: function() {
+				$(".aside-loggedin").toggle();
+				$(".aside-loggedout").toggle();
+			},
+			error: function() {
+				alert("Error. Unable to logout.");
+		}});
+	});
+	// closes modal when clicking on button
+	$(".close").click(function() {
+		$(".modal").css("display",  "none");
+	});
+	// document.getElementsByClassName("close").addEventListener("click", function(){
+	// 	modal.style.display = "none";
+	// });
 	// closes modal when clicking outside 
 	window.addEventListener("click",function(event) {
 	    if (event.target == modal) {

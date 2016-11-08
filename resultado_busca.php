@@ -1,37 +1,42 @@
 <?php
 require('header.html');
+require('class_produtos.php');
 
-if (isset($_POST) and $_POST != "") {
-  require('class_produtos.php');
+$palavra_chave = $_GET["produto"];
+if ($palavra_chave != "") {
   $produto = new produtos();
-  $resultado = $produto->listar_produtos();
+  $resultado = $produto->listar_produtos($palavra_chave);
 ?>
-<div class="row grad-bgnd">
-  <div id="div-table-search" class="col-8">
-    <table>
-      <thead>
-        <th>Categoria</th>
-        <th>Descrição</th>
-        <th>Nota</th>
-        <th>Observações</th>
-      </thead>
-      <tbody>
-        <?php 
-        foreach ($resultado as $row) {
-          echo "<tr>";
-          foreach ($row as $column) {        
-            echo "<td>$column</td>";
+  <div class="row grad-bgnd">
+    <div id="div-table-search">
+      <table>
+        <thead>
+          <th>Type</th>
+          <th>Name/Brand</th>
+          <th>Rate</th>
+          <th>Comments</th>
+        </thead>
+        <tbody>
+          <?php 
+          if ($resultado != []) {
+            foreach ($resultado as $row) {
+              echo "<tr>";
+              foreach ($row as $column) {        
+                echo "<td>$column</td>";
+              }
+              echo "</tr>";    
+            }  
           }
-          echo "</tr>";    
-        }
-        ?>
-      </tbody>
-    </table>
-  </div>
-</div>  
+          else {
+            echo "<tr><td colspan='4'>No results found</td></tr>";
+          }          
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </div>  
 
-<?php  
-  unset($_POST);
+<?php 
 }
 
 require('footer.html'); 

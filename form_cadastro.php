@@ -1,7 +1,8 @@
 <?php  
 require('header.html');
+session_start();
+if(isset($_SESSION['login'])) {
 require('class_produtos.php');
-
 ?>
 	<div class="row grad-bgnd">
 		<div class="container">	
@@ -11,12 +12,12 @@ require('class_produtos.php');
 				$produto = new produtos();
 				if ($produto->inserir_produto()) {
 					echo '<p class="alert-success">
-									Produto cadastrado com sucesso!
+									Product added!
 								</p>';
 				}
 				else {
 					echo '<p class="alert-error">
-									Ocorreu um erro e a ação não foi concluída.
+									Error. Could not add product.
 								</p>';
 				}
 				$_POST = [];
@@ -25,9 +26,9 @@ require('class_produtos.php');
 		
 			<form action="" method="POST">
 				<div class="row">	
-					<?php $categorias = ["suco", "cerveja", "vinho", "café", "bolo", "pão", "leite", "molho"];?>
+					<?php $categorias = ["juice", "beer", "wine", "coffe", "cake", "bread", "milk", "sauce"];?>
 					<div class="col-3">
-						<label>Categoria: </label>	
+						<label>Type: </label>	
 					</div>
 					<div class="col-9">
 						<select name="categoria" class="input-lg" selected=<?php echo "\"$categorias[0]\""; ?>>
@@ -39,7 +40,7 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Marca/sabor: </label>
+						<label>Name/Brand: </label>
 					</div>
 					<div class="col-9">
 						<input name="descricao" class="input-lg" required>	
@@ -47,7 +48,7 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Preço: R$</label>
+						<label>Price: $</label>
 					</div>
 					<div class="col-9">
 						<input name="preco" class="input-lg">
@@ -55,7 +56,7 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Local da compra: </label>
+						<label>Store: </label>
 					</div>
 					<div class="col-9">
 						<input name="local_compra" class="input-lg">	
@@ -63,7 +64,7 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Data da compra: </label>
+						<label>Date: </label>
 					</div>
 					<div class="col-9">
 						<input name="data_compra" class="input-lg">	
@@ -71,11 +72,11 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Nota: </label>
+						<label>Rate: </label>
 					</div>
 					<div class="col-9">
 						<select name="nota" selected="ruim" class="input-lg">
-						<?php $notas = ["bom", "excelente", "razoável", "ruim"];
+						<?php $notas = ["excellent", "good", "ok", "bad"];
 							foreach ($notas as $nota){
 								echo "<option value=\"$nota\">$nota</option>";
 							}
@@ -85,7 +86,7 @@ require('class_produtos.php');
 				</div>
 				<div class="row">
 					<div class="col-3">
-						<label>Comentários: </label>
+						<label>Comments: </label>
 					</div>
 					<div class="col-9">
 						<textarea name="observacoes" rows="4" cols="30" class="input-lg"></textarea>
@@ -93,10 +94,12 @@ require('class_produtos.php');
 					</div>	
 				</div>
 				<div class="row">
-					<button type="submit" class="btn-green btn-lg right">Enviar</button>
+					<button type="submit" class="btn-green btn-lg right">Send</button>
 				</div>
 			</form>
 			</div>
 		</div>
 	</div>
-<?php require('footer.html'); ?>
+<?php 
+}
+require('footer.html'); ?>

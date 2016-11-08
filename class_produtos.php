@@ -13,9 +13,9 @@ class produtos {
 		return $sql_exec;
 	}
 
-	function listar_produtos() {
+	function listar_produtos($produto) {
 		require('connection_data.php');
-		$palavra_chave = '%' .  $_POST['search-product'] . '%';
+		$palavra_chave = '%' .  $produto . '%';
 		$retorno = [];
 		
 		$sql = $connection->prepare("select categoria, descricao, nota, observacoes from PRODUTOS where categoria like ? or descricao like ?;");
@@ -30,15 +30,7 @@ class produtos {
 		$sql->close();
 		$connection->close();
 
-		return $retorno;		
-		
-
-		// $sql = "select categoria, descricao, nota, observacoes from PRODUTOS where categoria like '%café%'";
-		// $connection->query("set names UTF8;");
-		// $resultado = $connection->query($sql);
-
-		// return $resultado;
-				
+		return $retorno;						
 	}
 
 

@@ -1,17 +1,18 @@
 <?php 
-session_start();
 require('header.html');
-
+session_start();
 ?>
+
 <div id="landing-page-wrapper">
   <div id="landing-page-photo">
-    <form id="form-search" action="resultado_busca.php" method="POST">
-      <input name="search-product" class="input-search" placeholder=" Buscar por nome, categoria ou marca"><button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
+    <form id="form-search" action="resultado_busca.php" method="GET">
+      <input name="produto" class="input-search" placeholder=" Search by name, brand or type"><button type="submit" class="btn-search"><i class="fa fa-search"></i></button>
     </form>
     <div class="main-text">
-      Compartilhe sua opinião sobre produtos diversos e acesse a avaliação de outros consumidores no momento da compra
+      Share your thoughts about all kinds of products and see other people's opinions when shopping
     </div>
   </div>
+</div>
 
 <?php 
 require('footer.html');

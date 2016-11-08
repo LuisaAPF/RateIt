@@ -6,31 +6,37 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="cache-control" content="no-cache"/>
-	<title>DeSuaNota</title>
+	<title>RateIt</title>
 	<link rel="stylesheet" type="text/css" href="/estilos.css">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script src="/script.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+	<script type="text/javascript" src="/jquery-3.1.1.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 </head>
 <body>	
 	<nav>
-		<a id="btn-menu-toggle" href="#"><i class="fa fa-bars fa-2x"></i></a>
-		<a href="/index.php">
- 			<img src="imagens/nota.jpeg" alt="nota">
-		</a>
-		<a href="/form_cadastro.php" class="nav-menu">Avaliar um produto</a>	
-		<!--a href="" class="nav-menu">Minhas avaliações</a-->
-		<a href="#" class="nav-menu nav-right" id="anchor-login">Entrar</a>
-		<a href="/cadastro_usuario.php" class="nav-menu nav-right">Cadastrar</a>
-	</nav>
-	<aside style="display:none">
-		<ul>
-			<li>Avaliar um produto</li>
-			<!--li>Minhas avaliações</li-->
-		</ul>
+	  <a id="btn-menu-toggle" href="#"><i class="fa fa-bars fa-2x"></i></a>
+	  <a href="/index.php">
+	    <img src="imagens/nota.jpeg" alt="nota">
+	  </a>
+	  <!-- <a class="nav-title" href="/index.php">RateIt</a> -->
+	  <a href="/form_cadastro.php" class="nav-menu nav-loggedin">Rate a product</a> 
+	  <a href="" class="nav-menu nav-loggedin">My ratings</a>
+	  <a href="/cadastro_usuario.php" class="nav-menu nav-loggedout">Create account</a>
+	  <a href="#" class="nav-menu nav-loggedout" id="nav-login">Log in</a>
+	  <a href="#" class="nav-menu nav-loggedin" id="nav-logout">Log out</a>
+  </nav>
+	<aside>
+	  <ul>
+	  	<li class="aside-loggedin"><a href="/form_cadastro.php">Rate a product</a></li>
+	  	<li class="aside-loggedin"><a href="">My ratings</a></li>
+	    <li class="aside-loggedout"><a href="/cadastro_usuario.php">Create account</a></li>
+	    <li class="aside-loggedout" id="aside-login">Log in</li>
+	    <li class="aside-loggedin" id="aside-logout">Log out</li>
+	  </ul>
 	</aside>
-	<div id="modal-login" class="modal" style="display:none">
+	<div id="modal-login" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<div id="mensagem-login">
