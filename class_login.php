@@ -10,12 +10,13 @@ class login {
 		$salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
 		$salt = '$2a$10' . $salt; // estrutura do salt para algoritmo blowfish: $2a$ seguido do custo (10, nesse caso) seguido de uma string de 22 caracteres do universo ./0-9A-Za-z
 		$hash = crypt($senha, $salt);
-		$sql = "insert into USUARIOS (login, hash) values('$login', '$hash');";
-		$resultado = $connection->query($sql);
+		$sql = $connection->prepare('insert into USUARIOS (login,hash) values (?, ?);');
+		$sql->bind_param('ss', $login, $hash);
+		$resultado = $sql->execute();
+		
 		$connection->close();
-		if ($resultado)
-			return true;		
-		else return false;		
+		
+		return $resultado;		
 	}
 
 	function criar_sessao($login) {

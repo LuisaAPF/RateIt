@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
 						$(".aside-loggedin").toggle();
 						$(".aside-loggedout").toggle();
 					}
+				window.location.replace('./index.php');
 				}
 				else if (resultado == 'error') {
 					$("#mensagem-login").html("Wrong password or login");
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		$.ajax({url: "/logout.php",
 			success: function() {
 				$(".nav-menu").toggle();
+				window.location.replace('./index.php');
 			},
 			error: function() {
 				alert("Error. Unable to logout.");
@@ -91,15 +93,28 @@ document.addEventListener("DOMContentLoaded", function(){
 	});
 	$("#aside-logout").click(function() {	
 		$("aside").css("display", "none");
-		$.ajax({url: "/logout.php",
+		$.ajax({url: "./logout.php",
 			success: function() {
 				$(".aside-loggedin").toggle();
 				$(".aside-loggedout").toggle();
+				window.location.replace('./index.php');
 			},
 			error: function() {
 				alert("Error. Unable to logout.");
 		}});
 	});
+	// removes product by id
+	$('.delete-product').click(function(event) {
+		$.ajax({method: "GET", url: "/remove_product.php/", 
+			data: event.target.getAttribute('id'),
+			success: function() {
+				$('#message-delete_product').html("Product removed!");
+			},
+			error: function() {
+				$('#message-delete_product').html("Error. Could not remove product.");
+			}
+		});
+	})
 	// closes modal when clicking on button
 	$(".close").click(function() {
 		$(".modal").css("display",  "none");

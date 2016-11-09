@@ -9,10 +9,10 @@ if (isset($_POST) and $_POST != []) {
 	$usuario = new login();
 	$resultado = $usuario->cadastrar_login_senha();
 	if ($resultado) {
-		echo '<div class="container"><div class="alert-success">Cadastro concluído com sucesso!</div></div>';	
+		echo '<div class="container"><div class="alert-success">Account created successfully!</div></div>';	
 	}
 	else {
-		echo '<div class="container"><div class="alert-error">Ocorreu um erro e a ação não foi concluída.</div></div>';
+		echo '<div class="container"><div class="alert-error">Error. Could not create account.</div></div>';
 	}
 	unset($_POST);
 	$_POST = [];
@@ -21,6 +21,7 @@ if (isset($_POST) and $_POST != []) {
 
 <form method="POST" action="">
 	<div class="container">
+	<div class="col-9">
 		<br>
 		<div class="row">
 			<div>
@@ -28,10 +29,11 @@ if (isset($_POST) and $_POST != []) {
 			</div>
 		</div>
 		<div class="row">
-				<input id="senha-cadastro" name="senha" type="password" placeholder=" Senha" class="input-lg" required>
+				<input id="senha-cadastro" name="senha" type="password" placeholder=" Password" class="input-lg" required>
 		</div>
 		<div class="row">
-			<button id="btn-submit-cadastro" type="submit" class="btn-lg right">Cadastrar</button>
+			<button id="btn-submit-cadastro" type="submit" class="btn-lg btn-green right">Create</button>
+		</div>
 		</div>
 	</div>
 </form>
