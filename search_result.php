@@ -1,6 +1,6 @@
 <?php
 require('header.html');
-require('class_produtos.php');
+require('class_products.php');
 
 $palavra_chave = $_GET["produto"];
 if ($palavra_chave != "") {

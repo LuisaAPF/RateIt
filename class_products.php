@@ -53,12 +53,20 @@ class produtos {
 	function remover_produto($id) {
 		require('connection_data.php');
 
-		$sql = "delete from PRODUTOS where id = $id;";
-		$resultado = $connection->query($sql);
+		$sql = $connection->prepare("delete from PRODUTOS where id = ?;");
+		$sql->bind_param('s', $id);
+		$sql->execute();
 
+		if ($sql->affected_rows == 0) {	
+			$sql->close();		
+		  $connection->close();
+			return false;
+		}
+
+		$sql->close();
 		$connection->close();
-
-		return $resultado;
+		return true;
+		
 	}
 
 

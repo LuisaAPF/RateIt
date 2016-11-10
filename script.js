@@ -1,11 +1,3 @@
-function toggle_inline(){
-	for (var i=0; i<this.length; i++){
-		console.log(this[i]);
-		if (this[i].css("display") !== "none")
-			this[i].css("display") = "none";
-		else this[i].css("display") = "inline-block";
-	}
-}
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -15,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	$.ajax({url:"/session.php",
 		success: function(resultado) {
-			console.log(resultado);
 			if (resultado == "logged out") {
 				if ($("#btn-menu-toggle").css("display") == "none") {
 					$(".nav-loggedout").css("display", "inline-block");
@@ -106,12 +97,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	// removes product by id
 	$('.delete-product').click(function(event) {
 		$.ajax({method: "GET", url: "/remove_product.php/", 
-			data: event.target.getAttribute('id'),
-			success: function() {
-				$('#message-delete_product').html("Product removed!");
+			data: {id: event.currentTarget.getAttribute('id')},
+			success: function(resultado) {
+				resultado = resultado.replace(/\s/,'');
+				window.scrollTo(0,0);
+				$('#message-delete_product').html(resultado);
 			},
 			error: function() {
-				$('#message-delete_product').html("Error. Could not remove product.");
+				$('#message-delete_product').html("Error in the request.");
 			}
 		});
 	})

@@ -2,7 +2,7 @@
 require('header.html');
 session_start();
 if(isset($_SESSION['login'])) {
-require('class_produtos.php');
+require('class_products.php');
 ?>
 	<div class="row grad-bgnd">
 		<div class="container">	
@@ -26,7 +26,7 @@ require('class_produtos.php');
 		
 			<form action="" method="POST">
 				<div class="row">	
-					<?php $categorias = ["juice", "beer", "wine", "coffe", "cake", "bread", "milk", "sauce"];?>
+					<?php $categorias = ["juice", "beer", "wine", "coffee", "cake", "bread", "milk", "sauce"];?>
 					<div class="col-3">
 						<label>Type: </label>	
 					</div>
@@ -44,30 +44,6 @@ require('class_produtos.php');
 					</div>
 					<div class="col-9">
 						<input name="descricao" class="input-lg" required>	
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3">
-						<label>Price: $</label>
-					</div>
-					<div class="col-9">
-						<input name="preco" class="input-lg">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3">
-						<label>Store: </label>
-					</div>
-					<div class="col-9">
-						<input name="local_compra" class="input-lg">	
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3">
-						<label>Date: </label>
-					</div>
-					<div class="col-9">
-						<input name="data_compra" class="input-lg">	
 					</div>
 				</div>
 				<div class="row">

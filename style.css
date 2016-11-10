@@ -161,7 +161,7 @@ body {
 
 .alert-success {
 	padding: 2% 2% 2% 2%;
-	color: rgb(76, 175, 80) !important; 
+	color: rgb(76, 180, 90) !important; 
 }
 
 .alert-error {
@@ -353,6 +353,7 @@ textarea {
   padding: 10px 0 10px 0;
   font-size: 0.9em;
   text-indent: 5px;
+  font-family: none !important;
 }
 
 h1 {

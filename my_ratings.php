@@ -3,7 +3,7 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 require('header.html');
-require('class_produtos.php');
+require('class_products.php');
 
 session_start();
 $login = $_SESSION['login'];
@@ -31,7 +31,7 @@ if (isset($login)) {
                      <td>" .$row['descricao']. "</td>
                      <td>" .$row['nota']. "</td>
                      <td>" .$row['observacoes']. "</td>
-                     <td><button type='button' id='" .$row['id']. "'><i class='delete-product fa fa-eraser fa-lg'>bla</i></button></td>
+                     <td><button class='delete-product' type='button' id='" .$row['id']. "'><i class='fa fa-eraser fa-lg'></i></button></td>
                     </tr>";    
             }  
           }

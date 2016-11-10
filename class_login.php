@@ -1,7 +1,24 @@
 <?php
 class login {
-	
+
+	function checar_login_existe($login) {
+		require('connection_data.php');
+
+		$retorno = [];
 		
+		$sql = $connection->prepare("select count(*) from USUARIOS where login = ?;");
+		$sql->bind_param("s", $login);
+		$sql->execute();
+		$sql->bind_result($resultado);
+		$sql->fetch();
+		$sql->close();	
+		$connection->close();
+
+		if ($resultado == 0) return false;
+
+		return true;						
+	}
+			
 	function cadastrar_login_senha() {
 		require('connection_data.php');
 
@@ -44,13 +61,16 @@ class login {
 		
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
-		$sql = "select hash from USUARIOS where login='$login';";
-		$resultado = $connection->query($sql);
+		$sql = $connection->prepare("select hash, count(*) from USUARIOS where login = ?;");
+		$sql->bind_param('s', $login);
+		$sql->execute();
+		$sql->bind_result($hash, $count);
+		$sql->fetch();
+		$sql->close();
 		$connection->close();
 		
-		if (mysqli_num_rows($resultado) == 1) {
-			$obj = mysqli_fetch_object($resultado); 
-			$match = $this->hash_equals($obj->hash, crypt($senha, $obj->hash));
+		if ($count == 1) {
+			$match = $this->hash_equals($hash, crypt($senha, $hash));
 			if ($match) {
 				$this->criar_sessao($login);			
 				return true;
