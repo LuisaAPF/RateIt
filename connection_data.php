@@ -2,7 +2,7 @@
 require('config.php');
 
 $connection = new mysqli($dbServer, $dbUserName, $dbPassword, $dbName);
-$connection->query("use de_sua_nota;");
+$connection->query("use rateIt;");
 $connection->query("set names UTF8;");
 
 if ($connection->connect_errno){

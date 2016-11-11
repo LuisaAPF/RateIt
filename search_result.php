@@ -3,7 +3,7 @@ require('header.html');
 require('class_products.php');
 
 $palavra_chave = $_GET["produto"];
-if ($palavra_chave != "") {
+if ($palavra_chave != "" and trim($palavra_chave) != "") {
   $produto = new produtos();
   $resultado = $produto->listar_produtos($palavra_chave);
 ?>

@@ -26,14 +26,14 @@ require('class_products.php');
 		
 			<form action="" method="POST">
 				<div class="row">	
-					<?php $categorias = ["juice", "beer", "wine", "coffee", "cake", "bread", "milk", "sauce"];?>
+					<?php $types = ["juice", "beer", "wine", "coffee", "cake", "bread", "milk", "sauce"];?>
 					<div class="col-3">
 						<label>Type: </label>	
 					</div>
 					<div class="col-9">
-						<select name="categoria" class="input-lg" selected=<?php echo "\"$categorias[0]\""; ?>>
-						<?php foreach ($categorias as $cat) {
-							echo "<option value=\"$cat\">$cat</option>";
+						<select name="type" class="input-lg" selected=<?php echo "\"$types[0]\""; ?>>
+						<?php foreach ($types as $type) {
+							echo "<option value=\"$type\">$type</option>";
 						} ?>
 						</select>				
 					</div>	
@@ -43,7 +43,7 @@ require('class_products.php');
 						<label>Name/Brand: </label>
 					</div>
 					<div class="col-9">
-						<input name="descricao" class="input-lg" required>	
+						<input name="brand" class="input-lg" required maxlength="40">	
 					</div>
 				</div>
 				<div class="row">
@@ -51,10 +51,10 @@ require('class_products.php');
 						<label>Rate: </label>
 					</div>
 					<div class="col-9">
-						<select name="nota" selected="ruim" class="input-lg">
-						<?php $notas = ["excellent", "good", "ok", "bad"];
-							foreach ($notas as $nota){
-								echo "<option value=\"$nota\">$nota</option>";
+						<select name="rate" selected="ruim" class="input-lg">
+						<?php $rates = ["excellent", "good", "ok", "bad"];
+							foreach ($rates as $rate){
+								echo "<option value=\"$rate\">$rate</option>";
 							}
 						 ?>
 						</select>	
@@ -65,8 +65,7 @@ require('class_products.php');
 						<label>Comments: </label>
 					</div>
 					<div class="col-9">
-						<textarea name="observacoes" rows="4" cols="30" class="input-lg"></textarea>
-						<input type="hidden" name="usuario" value="Luisa">
+						<textarea name="comments" rows="4" cols="30" class="input-lg" maxlength="300"></textarea>
 					</div>	
 				</div>
 				<div class="row">

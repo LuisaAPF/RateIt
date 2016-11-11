@@ -4,8 +4,8 @@ class produtos {
 	function inserir_produto() {
 		require('connection_data.php');
 		
-		$sql = $connection->prepare ("insert into PRODUTOS (categoria, descricao, preco, local, data, nota, observacoes, usuario) values (?, ?, ?, ?, ?, ?, ?, ?);");
-		$sql->bind_param("ssssssss", $_POST['categoria'], $_POST['descricao'], $_POST['preco'], $_POST['local_compra'], $_POST['data_compra'], $_POST['nota'], $_POST['observacoes'], $_SESSION['login']);
+		$sql = $connection->prepare ("insert into products (type, brand, rate, comments, user) values (?, ?, ?, ?, ?);");
+		$sql->bind_param("sssss", $_POST['type'], $_POST['brand'], $_POST['rate'], $_POST['comments'], $_SESSION['login']);
 		$sql_exec = $sql->execute();
 		$sql->close();
 		$connection->close();
@@ -19,13 +19,13 @@ class produtos {
 		$palavra_chave = '%' .  $produto . '%';
 		$retorno = [];
 		
-		$sql = $connection->prepare("select categoria, descricao, nota, observacoes from PRODUTOS where categoria like ? or descricao like ?;");
+		$sql = $connection->prepare("select type, brand, rate, comments from products where type like ? or brand like ?;");
 		$sql->bind_param("ss", $palavra_chave, $palavra_chave);
 		$sql->execute();
-		$sql->bind_result($categoria, $descricao, $nota, $observacoes);
+		$sql->bind_result($type, $brand, $rate, $comments);
 
 		while ($row = $sql->fetch()){
-			array_push($retorno, [$categoria, $descricao, $nota, $observacoes]);
+			array_push($retorno, [$type, $brand, $rate, $comments]);
 		}
 
 		$sql->close();
@@ -38,7 +38,7 @@ class produtos {
 		require('connection_data.php');
 
 		$retorno = [];
-		$sql = "select id, categoria, descricao, nota, observacoes from PRODUTOS where usuario = '$login';";
+		$sql = "select id, type, brand, rate, comments from products where user = '$login';";
 		$resultado = $connection->query($sql);
 
 		while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) {
@@ -53,7 +53,7 @@ class produtos {
 	function remover_produto($id) {
 		require('connection_data.php');
 
-		$sql = $connection->prepare("delete from PRODUTOS where id = ?;");
+		$sql = $connection->prepare("delete from products where id = ?;");
 		$sql->bind_param('s', $id);
 		$sql->execute();
 

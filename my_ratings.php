@@ -27,10 +27,10 @@ if (isset($login)) {
           if ($resultado != []) {
             foreach ($resultado as $row) {
               echo "<tr>                
-                     <td>" .$row['categoria']. "</td>
-                     <td>" .$row['descricao']. "</td>
-                     <td>" .$row['nota']. "</td>
-                     <td>" .$row['observacoes']. "</td>
+                     <td>" .$row['type']. "</td>
+                     <td>" .$row['brand']. "</td>
+                     <td>" .$row['rate']. "</td>
+                     <td>" .$row['comments']. "</td>
                      <td><button class='delete-product' type='button' id='" .$row['id']. "'><i class='fa fa-eraser fa-lg'></i></button></td>
                     </tr>";    
             }  

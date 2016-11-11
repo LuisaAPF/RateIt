@@ -6,7 +6,7 @@ class login {
 
 		$retorno = [];
 		
-		$sql = $connection->prepare("select count(*) from USUARIOS where login = ?;");
+		$sql = $connection->prepare("select count(*) from users where login = ?;");
 		$sql->bind_param("s", $login);
 		$sql->execute();
 		$sql->bind_result($resultado);
@@ -22,12 +22,14 @@ class login {
 	function cadastrar_login_senha() {
 		require('connection_data.php');
 
-		$senha = $_POST['senha'];
-		$login = $_POST['login'];
+		$senha = trim($_POST['senha']);
+		$login = trim($_POST['login']);
+		if ($senha == "" or $login == "") return false;
+		
 		$salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
 		$salt = '$2a$10' . $salt; // estrutura do salt para algoritmo blowfish: $2a$ seguido do custo (10, nesse caso) seguido de uma string de 22 caracteres do universo ./0-9A-Za-z
 		$hash = crypt($senha, $salt);
-		$sql = $connection->prepare('insert into USUARIOS (login,hash) values (?, ?);');
+		$sql = $connection->prepare('insert into users (login,hash) values (?, ?);');
 		$sql->bind_param('ss', $login, $hash);
 		$resultado = $sql->execute();
 		
@@ -61,7 +63,7 @@ class login {
 		
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
-		$sql = $connection->prepare("select hash, count(*) from USUARIOS where login = ?;");
+		$sql = $connection->prepare("select hash, count(*) from users where login = ?;");
 		$sql->bind_param('s', $login);
 		$sql->execute();
 		$sql->bind_result($hash, $count);
