@@ -52,7 +52,8 @@ body {
 
   #landing-page-photo .main-text {
     width: 100%;
-    padding: 4% 1%;
+    padding: 4% 2%;
+    font-size: 1.1em;
   }
 
   .input-medium {
@@ -86,9 +87,9 @@ body {
   }
 
   #landing-page-photo .main-text {
-    width: 80%;
-    padding: 4% 1%;
-    font-size: 1.5em;
+    width: 100%;
+    padding: 4% 3%;
+    font-size: 1.4em;
   }
 
   .input-medium {
@@ -229,6 +230,16 @@ nav a.nav-menu {
 .nav-menu:hover {
   background-color: #000000;
   color: #ffffff;
+}
+
+a.titleFont {
+  font-family: 'BellotaRegular'; 
+  font-weight: bold; 
+  font-style: normal;
+  font-size: 1.5em ;
+  padding: 22px 30px 20px 8px !important;
+  position: relative;
+  bottom: 40%;
 }
 
 aside {
